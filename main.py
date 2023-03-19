@@ -3,12 +3,10 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from git import git_url
 from aiogram.dispatcher.filters import Text
-from pydantic import BaseSettings, SecretStr
-from API import BOT_TOKEN
+from API import config
 
 
-
-bot = Bot(BOT_TOKEN)
+bot = Bot(token=config.bot_token.get_secret_value())
 
 dp = Dispatcher(bot)
 
