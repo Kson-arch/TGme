@@ -4,11 +4,12 @@ from aiogram.utils import executor
 from git import git_url
 from aiogram.dispatcher.filters import Text
 from pydantic import BaseSettings, SecretStr
+from API import BOT_TOKEN
 
 
-from API import config
 
-bot = Bot(token=config.bot_tok.get_secret_value())
+bot = Bot(BOT_TOKEN)
+
 dp = Dispatcher(bot)
 
 
@@ -34,4 +35,4 @@ async def cod_1(message: types.Message):
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp)
+    executor.start_polling(dp, skip_updates=True)

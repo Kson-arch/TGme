@@ -1,9 +1,1 @@
-from pydantic import BaseSettings, SecretStr
-
-class sit(BaseSettings):
-    bot_tok = SecretStr
-    class config:
-        env_file = '.env'
-        env_coding = 'UTF-8'
-
-config = sit()
+BOT_TOKEN = "6008113598:AAFgWzojpiqTopkiXp8-LSauygV2UmzR-MQ"
